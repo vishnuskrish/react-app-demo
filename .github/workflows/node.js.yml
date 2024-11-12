@@ -26,6 +26,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - name: Print Secret
+      run: echo ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
     - run: npm ci
     #- run: npm test
     - run: npm run build 
